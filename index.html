@@ -2,6 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | XRweb</title>
     <meta name="description" content="">
@@ -10,7 +11,7 @@
   </head>
   <body>
     <div id="unity-container">
-      <div id="unity-canvas-container">
+      <div id="unity-canvas-container" style="width: 100%; height: 100%;">
         <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
       </div>
       <div id="unity-loading-bar">
@@ -29,11 +30,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/ert.loader.js";
+      var loaderUrl = buildUrl + "/slr.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ert.data",
-        frameworkUrl: buildUrl + "/ert.framework.js",
-        codeUrl: buildUrl + "/ert.wasm",
+        dataUrl: buildUrl + "/slr.data",
+        frameworkUrl: buildUrl + "/slr.framework.js",
+        codeUrl: buildUrl + "/slr.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "XRweb",
@@ -49,8 +50,6 @@
       var unityInstance = null;
       
 
-      canvasContainer.style.width = "960px";
-      canvasContainer.style.height = "600px";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
